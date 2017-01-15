@@ -46,6 +46,9 @@ $image_path = '/YOUR/IMAGE/PATH'; //Line notify allow only jpeg and png file
 $ln->send($text, $image_path);
 ```
 
+## Screenshot
+![Screenshot](/screenshot/1.png?raw=true "Screenshot")
+
 
 License
 =======
