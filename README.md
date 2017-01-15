@@ -17,9 +17,11 @@ Line Notify with PHP
 
 ## Composer
 
-Install the latest version with composer require kittinan/php-line-notify
+Install the latest version with composer
 
-This plugin on the Packagist.
+```
+composer require kittinan/php-line-notify
+```
 
 [https://packagist.org/packages/kittinan/php-line-notify](https://packagist.org/packages/kittinan/php-line-notify)
 
