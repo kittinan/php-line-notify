@@ -3,7 +3,7 @@ php-line-notify
 [![Build Status](https://travis-ci.org/kittinan/php-line-notify.svg?branch=master)](https://travis-ci.org/kittinan/php-line-notify)
 [![Code Coverage](https://scrutinizer-ci.com/g/kittinan/php-line-notify/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kittinan/php-line-notify/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kittinan/php-line-notify/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kittinan/php-line-notify/?branch=master)
-[![License](https://poser.pugx.org/kittinan/php-line-notify/license.svg)](https://packagist.org/packages/kittinan/php-line-notify)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Line Notify with PHP 
 
@@ -41,7 +41,7 @@ $ln->send($text);
 ```php
 $text = 'Hello Line Notify';
 $image_path = '/YOUR/IMAGE/PATH'; //Line notify allow only jpeg and png file
-$ln->send($text);
+$ln->send($text, $image_path);
 ```
 
 
