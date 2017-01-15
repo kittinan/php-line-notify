@@ -1,0 +1,15 @@
+{
+  "name": "kittinan/php-line-notify",
+  "description": "PHP Line Notify",
+  "keywords": ["line", "line notify"],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.5",
+    "guzzlehttp/guzzle": ">=6.2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "KS\\Line\\": "src"
+    }
+  }
+}
