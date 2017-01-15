@@ -23,6 +23,10 @@ This plugin on the Packagist.
 
 [https://packagist.org/packages/kittinan/php-line-notify](https://packagist.org/packages/kittinan/php-line-notify)
 
+##Generate Line Notify Token
+
+[https://notify-bot.line.me/my/] (https://notify-bot.line.me/my/)
+
 ## Usage
 *Example : notify text message*
 ```php
@@ -30,6 +34,13 @@ $token = 'YOUR LINE NOTIFY TOKEN';
 $ln = new KS\Line\LineNotify($token);
 
 $text = 'Hello Line Notify';
+$ln->sendText($text);
+```
+
+*Example : notify text with image*
+```php
+$text = 'Hello Line Notify';
+$image_path = '/YOUR/IMAGE/PATH'; //Line notify allow only jpeg and png file
 $ln->sendText($text);
 ```
 
