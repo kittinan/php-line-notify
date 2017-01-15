@@ -47,7 +47,7 @@ $ln->send($text, $image_path);
 ```
 
 ## Screenshot
-![Screenshot](/screenshot/1.png?raw=true "Screenshot")
+![Screenshot](/screenshot/screen.png?raw=true "Screenshot")
 
 
 License
