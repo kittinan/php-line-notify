@@ -34,14 +34,14 @@ $token = 'YOUR LINE NOTIFY TOKEN';
 $ln = new KS\Line\LineNotify($token);
 
 $text = 'Hello Line Notify';
-$ln->sendText($text);
+$ln->send($text);
 ```
 
 *Example : notify text with image*
 ```php
 $text = 'Hello Line Notify';
 $image_path = '/YOUR/IMAGE/PATH'; //Line notify allow only jpeg and png file
-$ln->sendText($text);
+$ln->send($text);
 ```
 
 

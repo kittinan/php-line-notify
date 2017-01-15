@@ -11,9 +11,9 @@ before_script:
 script: 
   - vendor/bin/phpunit ./tests
   - mkdir -p build/logs
-  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml ./tests
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.clover ./tests
 
 after_script:
  - php vendor/bin/coveralls -v
  - wget https://scrutinizer-ci.com/ocular.phar
- - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
+ - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.clover

@@ -25,7 +25,7 @@ class LineNotify {
     return $this->token;
   }
 
-  public function sendText($text, $imagePath = null) {
+  public function send($text, $imagePath = null) {
 
     if (empty($text)) {
       return false;
