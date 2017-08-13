@@ -25,7 +25,7 @@ class LineNotify {
     return $this->token;
   }
 
-  public function send($text, $imagePath = null) {
+  public function send($text, $imagePath = null, $sticker = null) {
 
     if (empty($text)) {
       return false;
@@ -36,20 +36,37 @@ class LineNotify {
         'Authorization' => 'Bearer ' . $this->token,
       ],
     ];
+    
+    //Message always required
+    $request_params['multipart'] = [
+      [
+        'name' => 'message',
+        'contents' => $text
+      ]
+    ];
 
     if (!empty($imagePath)) {
-      $request_params['multipart'] = [
-        [
-          'name' => 'message',
-          'contents' => $text
-        ],
-        [
-          'name' => 'imageFile',
-          'contents' => fopen($imagePath, 'r')
-        ],
+      $request_params['multipart'][] = [
+        'name' => 'imageFile',
+        'contents' => fopen($imagePath, 'r')
       ];
-    } else {
-      $request_params['form_params'] = ['message' => $text];
+    }
+
+    //https://devdocs.line.me/files/sticker_list.pdf
+    if (!empty($sticker) 
+      && !empty($sticker['stickerPackageId']) 
+      && !empty($sticker['stickerId'])) {
+      
+      $request_params['multipart'][] = [
+        'name' => 'stickerPackageId',
+        'contents' => $sticker['stickerPackageId']
+      ];
+      
+      $request_params['multipart'][] = [
+        'name' => 'stickerId',
+        'contents' => $sticker['stickerId']
+      ];
+      
     }
 
     $response = $this->http->request('POST', LineNotify::API_URL, $request_params);
