@@ -5,15 +5,15 @@ php-line-notify
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kittinan/php-line-notify/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kittinan/php-line-notify/?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Line Notify with PHP 
+Simple PHP Line Notify Class
 
-[Line Notify Document] (https://notify-bot.line.me/doc/en/)
+[Line Notify Document](https://notify-bot.line.me/doc/en/)
 
 
 
 ## Requirement
 * PHP 5.5+
-* [guzzlehttp] (https://github.com/guzzle/guzzle)
+* [guzzlehttp](https://github.com/guzzle/guzzle)
 
 ## Composer
 
@@ -25,9 +25,9 @@ composer require kittinan/php-line-notify
 
 [https://packagist.org/packages/kittinan/php-line-notify](https://packagist.org/packages/kittinan/php-line-notify)
 
-##Generate Line Notify Token
+## Generate Line Notify Token
 
-[https://notify-bot.line.me/my/] (https://notify-bot.line.me/my/)
+[https://notify-bot.line.me/my/](https://notify-bot.line.me/my/)
 
 ## Usage
 *Example : notify text message*
@@ -40,10 +40,21 @@ $ln->send($text);
 ```
 
 *Example : notify text with image*
+
 ```php
 $text = 'Hello Line Notify';
 $image_path = '/YOUR/IMAGE/PATH'; //Line notify allow only jpeg and png file
 $ln->send($text, $image_path);
+```
+
+*Example : notify text with sticker*
+
+See sticker list [https://devdocs.line.me/files/sticker_list.pdf](https://devdocs.line.me/files/sticker_list.pdf)
+
+```php
+$text = 'Hello Sticker';
+$sticker = ['stickerPackageId' => '1', 'stickerId' => '401'];
+$ln->send($text, null, $sticker);
 ```
 
 ## Screenshot
