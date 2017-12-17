@@ -76,8 +76,21 @@ class LineNotify {
         'contents' => $text
       ]
     ];
-
-    if (!empty($imagePath)) {
+    
+    if (!empty($imagePath) && preg_match("#^https?://#", $imagePath)) {
+      // Remote HTTP / HTTPS image
+      $request_params['multipart'][] = [
+        'name' => 'imageThumbnail',
+        'contents' => $imagePath
+      ];
+      
+      $request_params['multipart'][] = [
+        'name' => 'imageFullsize',
+        'contents' => $imagePath
+      ];
+      
+    } elseif (!empty($imagePath) && file_exists($imagePath)) {
+      // Local image
       $request_params['multipart'][] = [
         'name' => 'imageFile',
         'contents' => fopen($imagePath, 'r')
