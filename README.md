@@ -45,6 +45,11 @@ $ln->send($text);
 $text = 'Hello Line Notify';
 $image_path = '/YOUR/IMAGE/PATH'; //Line notify allow only jpeg and png file
 $ln->send($text, $image_path);
+
+//HTTP or HTTPS image path
+$image_path = 'https://lorempixel.com/800/600/'; //Line notify allow only jpeg and png file
+$ln->send($text, $image_path);
+
 ```
 
 *Example : notify text with sticker*
