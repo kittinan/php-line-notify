@@ -1,3 +1,9 @@
+# End of service for LINE Notify
+
+https://notify-bot.line.me/closing-announce
+
+---
+
 php-line-notify
 ========
 [![Build Status](https://travis-ci.org/kittinan/php-line-notify.svg?branch=master)](https://travis-ci.org/kittinan/php-line-notify)
